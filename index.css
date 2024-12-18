@@ -1,0 +1,254 @@
+.App {
+  margin: 0;
+  font-family:'Courier New', Courier, monospace; /*sivulla käytettävä fontti*/
+}
+.navbar {
+  padding: 20px; /*navigointipalkin asetukset kaikkine väreineen ja asetteluineen*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid;
+}
+.navbar h1 {
+  color: #60c7cd;
+}
+.navbar h1 span {
+  color: #e16d99;
+}
+.navbar .links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.navbar .links ul {
+  list-style-type: none;
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  display: flex;
+}
+.navbar .links ul li {
+  color: black;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.navbar .links ul li:hover {
+  color:#60c7cd
+}
+.navbar .links ul li a {
+  color: black; /* vaihtaa linkkien värin ettei ne ole rumia */
+  text-decoration: none; /* poistaa linkkien alleviivauksen */
+  display: flex;
+  align-items: center;
+}
+.navbar .links ul li a:hover {
+  color: #60c7cd;
+}
+.navbar .links ul li a svg {
+  fill: black; /* ikonien väri */
+  margin-right: 5px;
+}
+.navbar .links ul li a:hover svg {
+  fill: #60c7cd;
+}
+.content {
+  display: flex; /*sivun keskiosan asetuksia, elementit keskelle sivua jne.*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.content a {
+  text-decoration: none;
+  color: black;
+}
+.content h3 {
+  color:#e16d99;
+}
+.content h3 span::before {
+  content: "{"; /* lisää merkin */
+  color:#60c7cd;
+}
+.content h3 span::after {
+  content: "}";
+  color:#60c7cd;
+}
+.content .merkit h4 span::before {
+  content: "/*";
+  color:#60c7cd;
+}
+.content .merkit h4 span::after {
+  content: "*/";
+  color:#60c7cd;
+}
+.content h4 strong {
+  color:#e16d99;
+}
+.content h4 span {
+  color:#60c7cd;
+}
+.bottom {
+  padding: 20px;  /*css asetukset sivun alaosaan tai footeriin. elementit keskelle sivua jne.*/
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.tietoa .nayta {
+  padding: 10px 16px; /*minun tietojen asetuksia*/
+  margin: 20px 0;
+  border-bottom: 1px solid;
+}
+.tietoa .nayta:hover {
+  box-shadow: 1px 3px 5px #60c7cd;
+}
+.content .esittelycontent {
+  display: flex;
+  justify-content: space-between; /* oikean ja vaesemman välissä on tilaa */
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.content .esittelycontent .vasen {
+  flex: 1; /* ottaa vasemman puolen tilan? */
+  margin-right: 20px;
+}
+.content .esittelycontent .oikea {
+  flex: 1;
+  text-align: center; /* kuva on oikealla */
+}
+.content .esittelycontent .image {
+  max-width: 100%; /* kuvan responsiivisuus */
+  height: auto; /* pitää kuvasuhteen */
+  margin-top: 40px;
+}
+.content .logot {
+  position: absolute;
+  display:flex;
+  gap: 20px;
+  left: 20px;
+  top: 60px;
+  padding-left: 20px;
+  padding-top: 60px;
+  flex-direction: column;
+}
+.content .logot a {
+  color:black;
+}
+.content .logot a:hover svg {
+  fill: #60c7cd;
+}
+.bottom .logot a {
+  color:black;
+  padding:25px;
+}
+.bottom .logot a:hover svg {
+  fill: #60c7cd;
+}
+@media (max-width: 815px) {
+  .navbar {
+    flex-direction: column; /* läjään */
+    align-items: flex-start; /* Align */
+    padding: 10px;
+  }
+  .navbar .links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .navbar .links ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .content .logot {
+    display: none;
+  }
+}
+.content .video {
+  top: 0;
+  left: 0;
+  width: 60vw; /* viewport leveys */
+  height: 60vh; /* viewport korkeus */
+  overflow: hidden;
+  margin-top: 10px;
+  box-shadow: 1px 3px 5px #60c7cd;
+}
+.content .video iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.content .etu {
+  box-shadow: 1px 3px 5px #60c7cd;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+.content .moviecontent {
+  display: flex;           /* flexbox container */
+  justify-content: space-between;
+  align-items: flex-start; /* sijoita containerin alkuun */
+  padding: 20px;
+  gap: 20px;
+}
+.content .moviecontent .movieRecommend {
+  flex: 1;
+  text-align: center; /* kuva on oikealla */
+  padding-top: 55px;
+}
+.content .moviecontent .movieRecommend img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.content .moviecontent .movieSearch {
+  flex: 1; /* ottaa vasemman puolen tilan? */
+}
+.content .movieTitleSearch img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.content .projectimg .image {
+  max-width: 80%; /* kuvan responsiivisuus */
+  height: auto; /* pitää kuvasuhteen */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.content .recent-sessions {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.content .recent-sessions table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.content .recent-sessions th, .recent-sessions td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.content .progress {
+  margin-top: 20px;
+}
+
+.content .progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.content .progress-bar-fill {
+  height: 10px;
+  background-color: #4caf50;
+}
